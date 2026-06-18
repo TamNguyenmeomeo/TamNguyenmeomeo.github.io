@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Nguyen Thanh Tam — Cloud Support Portfolio</title>
+<meta name="description" content="IT Support transitioning to Cloud Engineer. Portfolio of AI, monitoring, and cloud infrastructure projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#060818;
+  --glass:rgba(255,255,255,0.05);
+  --glass-border:rgba(255,255,255,0.1);
+  --blue:#4facfe;--purple:#a78bfa;--green:#51cf66;--pink:#f472b6;--orange:#fb923c;
+  --text:rgba(255,255,255,0.9);--muted:rgba(255,255,255,0.5);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+
+/* ── Animated background ── */
+body::before{
+  content:'';position:fixed;inset:0;z-index:-1;
+  background:
+    radial-gradient(ellipse 80% 60% at 10% 10%,rgba(79,172,254,0.12) 0%,transparent 60%),
+    radial-gradient(ellipse 60% 50% at 90% 80%,rgba(167,139,250,0.12) 0%,transparent 60%),
+    radial-gradient(ellipse 40% 40% at 50% 50%,rgba(15,12,41,1) 0%,#060818 100%);
+}
+
+/* ── Nav ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:16px 40px;display:flex;justify-content:space-between;align-items:center;
+  background:rgba(6,8,24,0.8);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--glass-border);
+}
+.nav-logo{font-weight:700;font-size:1.1rem;background:linear-gradient(90deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:14px;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+
+/* ── Sections ── */
+section{padding:100px 40px;max-width:1100px;margin:0 auto}
+
+/* ── Hero ── */
+#hero{
+  min-height:100vh;display:flex;flex-direction:column;
+  justify-content:center;padding-top:120px;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(79,172,254,0.1);border:1px solid rgba(79,172,254,0.3);
+  border-radius:40px;padding:6px 18px;font-size:13px;color:var(--blue);
+  margin-bottom:28px;width:fit-content;
+}
+.hero-badge span{width:8px;height:8px;background:var(--blue);border-radius:50%;animation:pulse 2s infinite}
+h1.hero-title{
+  font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;line-height:1.1;margin-bottom:20px;
+}
+.gradient-text{background:linear-gradient(135deg,var(--blue),var(--purple),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-subtitle{font-size:1.2rem;color:var(--muted);max-width:600px;line-height:1.7;margin-bottom:40px}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+.btn-primary{
+  padding:14px 32px;background:linear-gradient(135deg,var(--blue),var(--purple));
+  border:none;border-radius:12px;color:white;font-weight:600;font-size:15px;
+  cursor:pointer;text-decoration:none;transition:transform .2s,box-shadow .2s;
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(79,172,254,0.35)}
+.btn-outline{
+  padding:14px 32px;background:transparent;
+  border:1px solid var(--glass-border);border-radius:12px;color:var(--text);
+  font-weight:600;font-size:15px;cursor:pointer;text-decoration:none;transition:all .2s;
+}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue)}
+
+/* ── Glass card ── */
+.glass{
+  background:var(--glass);border:1px solid var(--glass-border);
+  border-radius:20px;backdrop-filter:blur(12px);
+}
+
+/* ── Skills ── */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;margin-top:32px}
+.skill-chip{
+  background:var(--glass);border:1px solid var(--glass-border);
+  border-radius:12px;padding:10px 16px;text-align:center;font-size:13px;
+  font-weight:500;transition:border-color .2s,transform .2s;cursor:default;
+}
+.skill-chip:hover{border-color:var(--blue);transform:translateY(-2px)}
+
+/* ── Projects ── */
+.section-title{font-size:2rem;font-weight:700;margin-bottom:8px}
+.section-sub{color:var(--muted);margin-bottom:40px;font-size:1rem}
+.project-category{font-size:13px;color:var(--purple);font-weight:600;text-transform:uppercase;letter-spacing:1.5px;margin:40px 0 16px}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+.project-card{
+  background:var(--glass);border:1px solid var(--glass-border);
+  border-radius:20px;padding:28px;transition:transform .25s,border-color .25s,box-shadow .25s;
+  display:flex;flex-direction:column;gap:12px;
+}
+.project-card:hover{transform:translateY(-5px);border-color:rgba(79,172,254,0.3);box-shadow:0 20px 60px rgba(0,0,0,0.4)}
+.project-emoji{font-size:2rem}
+.project-title{font-weight:700;font-size:1.05rem}
+.project-desc{color:var(--muted);font-size:14px;line-height:1.6;flex:1}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px}
+.tag{
+  background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);
+  border-radius:20px;padding:3px 12px;font-size:12px;color:var(--muted);
+}
+.project-links{display:flex;gap:12px;margin-top:4px}
+.proj-link{
+  font-size:13px;font-weight:600;color:var(--blue);text-decoration:none;
+  display:flex;align-items:center;gap:5px;transition:opacity .2s;
+}
+.proj-link:hover{opacity:.7}
+.ci-badge img{height:20px;border-radius:4px}
+
+/* ── Journey ── */
+.journey-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px}
+.journey-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:20px;padding:28px}
+.journey-card h3{margin-bottom:16px;font-size:1rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.journey-item{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:14px}
+.journey-item:last-child{border-bottom:none}
+.check{color:var(--green)}
+.arrow{color:var(--orange);font-size:18px;flex-shrink:0}
+.journey-right{color:var(--text);font-weight:500}
+
+/* ── Contact ── */
+.contact-card{
+  background:var(--glass);border:1px solid var(--glass-border);
+  border-radius:24px;padding:48px;text-align:center;
+}
+.contact-card h2{font-size:2rem;font-weight:700;margin-bottom:12px}
+.contact-card p{color:var(--muted);margin-bottom:32px;font-size:1rem}
+.contact-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+.contact-btn{
+  padding:12px 28px;border-radius:12px;font-weight:600;font-size:14px;
+  text-decoration:none;transition:all .2s;display:flex;align-items:center;gap:8px;
+}
+.cb-gh{background:rgba(255,255,255,0.08);border:1px solid var(--glass-border);color:var(--text)}
+.cb-gh:hover{border-color:var(--blue);color:var(--blue)}
+.cb-mail{background:linear-gradient(135deg,var(--blue),var(--purple));color:white;border:none}
+.cb-mail:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(79,172,254,0.35)}
+
+/* ── Footer ── */
+footer{text-align:center;padding:32px;color:var(--muted);font-size:13px;border-top:1px solid var(--glass-border)}
+
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+@media(max-width:700px){
+  nav{padding:14px 20px}.nav-links{gap:16px}
+  section{padding:80px 20px}
+  .journey-grid{grid-template-columns:1fr}
+  .projects-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Tam Nguyen</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#journey">Journey</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-badge"><span></span> Open to Cloud Support Roles</div>
+  <h1 class="hero-title">
+    Hi, I'm <span class="gradient-text">Tam Nguyen</span><br>
+    Cloud Support Engineer
+  </h1>
+  <p class="hero-subtitle">
+    Transitioning from IT Helpdesk to Cloud Engineering — building production-ready projects
+    with Docker, Python, Prometheus, and AI-powered tooling.
+  </p>
+  <div class="hero-btns">
+    <a href="#projects" class="btn-primary">View Projects →</a>
+    <a href="https://github.com/TamNguyenmeomeo" target="_blank" class="btn-outline">GitHub Profile</a>
+  </div>
+</section>
+
+<!-- ABOUT / SKILLS -->
+<section id="about">
+  <div class="section-title">🛠️ Tech Stack</div>
+  <p class="section-sub">Tools and technologies I use to build cloud-ready systems</p>
+  <div class="skills-grid">
+    <div class="skill-chip">🐍 Python</div>
+    <div class="skill-chip">🐳 Docker</div>
+    <div class="skill-chip">📊 Prometheus</div>
+    <div class="skill-chip">📈 Grafana</div>
+    <div class="skill-chip">🤖 Streamlit</div>
+    <div class="skill-chip">🧠 Ollama LLM</div>
+    <div class="skill-chip">🗄️ PostgreSQL</div>
+    <div class="skill-chip">💾 SQLite</div>
+    <div class="skill-chip">🌐 Nginx</div>
+    <div class="skill-chip">⚙️ GitHub Actions</div>
+    <div class="skill-chip">🔷 PowerShell</div>
+    <div class="skill-chip">🐧 Bash</div>
+    <div class="skill-chip">🔬 scikit-learn</div>
+    <div class="skill-chip">📉 Plotly</div>
+    <div class="skill-chip">☁️ MinIO / S3</div>
+    <div class="skill-chip">🔐 IAM / RBAC</div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-title">📁 Portfolio Projects</div>
+  <p class="section-sub">7 projects spanning AI, monitoring, cloud infrastructure and DevOps automation</p>
+
+  <div class="project-category">🤖 AI & Machine Learning for IT Operations</div>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-emoji">🧠</div>
+      <div class="project-title">AI IT Support Assistant</div>
+      <div class="project-desc">RAG-powered helpdesk using Ollama LLM + SQLite knowledge base (1,213 tickets). Telegram Bot integration, Plotly analytics dashboard, offline-first design.</div>
+      <div class="tag-row"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">Ollama</span><span class="tag">SQLite</span><span class="tag">RAG</span></div>
+      <div class="ci-badge"><img src="https://github.com/TamNguyenmeomeo/10_ai_it_support_assistant/actions/workflows/ci.yml/badge.svg" alt="CI"></div>
+      <div class="project-links">
+        <a href="https://github.com/TamNguyenmeomeo/10_ai_it_support_assistant" target="_blank" class="proj-link">→ GitHub</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-emoji">🔍</div>
+      <div class="project-title">ML Log Anomaly Detector</div>
+      <div class="project-desc">Unsupervised Isolation Forest model that detects cyber attacks, DB lockups, and latency spikes from server logs. Discord/Telegram webhook alerts, interactive Plotly scatter dashboard.</div>
+      <div class="tag-row"><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">Plotly</span><span class="tag">Streamlit</span></div>
+      <div class="ci-badge"><img src="https://github.com/TamNguyenmeomeo/12_log_anomaly_detector/actions/workflows/ci.yml/badge.svg" alt="CI"></div>
+      <div class="project-links">
+        <a href="https://github.com/TamNguyenmeomeo/12_log_anomaly_detector" target="_blank" class="proj-link">→ GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-category">📡 Monitoring & Infrastructure</div>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-emoji">📡</div>
+      <div class="project-title">Network & System Monitor</div>
+      <div class="project-desc">Real-time CPU/RAM/Disk monitoring with Plotly gauge charts, host ping checker, alert history timeline, and Telegram bot with remote commands (/status, /ping, /setthreshold).</div>
+      <div class="tag-row"><span class="tag">Python</span><span class="tag">psutil</span><span class="tag">Plotly</span><span class="tag">SQLite</span><span class="tag">Telegram</span></div>
+      <div class="ci-badge"><img src="https://github.com/TamNguyenmeomeo/11_network_system_monitor/actions/workflows/ci.yml/badge.svg" alt="CI"></div>
+      <div class="project-links">
+        <a href="https://github.com/TamNguyenmeomeo/11_network_system_monitor" target="_blank" class="proj-link">→ GitHub</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-emoji">📊</div>
+      <div class="project-title">Cloud Monitoring Stack</div>
+      <div class="project-desc">Enterprise-grade monitoring: Prometheus scrapes metrics, Grafana visualizes dashboards, cAdvisor tracks container resources, Alertmanager fires Telegram alerts on threshold breach.</div>
+      <div class="tag-row"><span class="tag">Docker</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Alertmanager</span></div>
+      <div class="ci-badge"><img src="https://github.com/TamNguyenmeomeo/15_cloud_monitoring_stack/actions/workflows/ci.yml/badge.svg" alt="CI"></div>
+      <div class="project-links">
+        <a href="https://github.com/TamNguyenmeomeo/15_cloud_monitoring_stack" target="_blank" class="proj-link">→ GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-category">☁️ Cloud & DevOps</div>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-emoji">🔐</div>
+      <div class="project-title">Cloud Storage & IAM Simulator</div>
+      <div class="project-desc">Simulates AWS S3 + IAM locally using MinIO + Docker. Three role levels (Admin/Developer/ReadOnly) enforced via boto3. Live policy JSON viewer mimics AWS Console.</div>
+      <div class="tag-row"><span class="tag">Docker</span><span class="tag">MinIO</span><span class="tag">boto3</span><span class="tag">IAM</span><span class="tag">Streamlit</span></div>
+      <div class="ci-badge"><img src="https://github.com/TamNguyenmeomeo/14_cloud_storage_iam_simulator/actions/workflows/ci.yml/badge.svg" alt="CI"></div>
+      <div class="project-links">
+        <a href="https://github.com/TamNguyenmeomeo/14_cloud_storage_iam_simulator" target="_blank" class="proj-link">→ GitHub</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-emoji">🚀</div>
+      <div class="project-title">3-Tier Cloud Migration App</div>
+      <div class="project-desc">Production-ready Nginx→Flask→PostgreSQL architecture in Docker Compose. Includes one-command bash deploy script that auto-installs Docker, syncs code via rsync, and health-checks the live app.</div>
+      <div class="tag-row"><span class="tag">Docker</span><span class="tag">Flask</span><span class="tag">PostgreSQL</span><span class="tag">Nginx</span><span class="tag">Bash</span></div>
+      <div class="ci-badge"><img src="https://github.com/TamNguyenmeomeo/16_cloud_migration_3tier_app/actions/workflows/ci.yml/badge.svg" alt="CI"></div>
+      <div class="project-links">
+        <a href="https://github.com/TamNguyenmeomeo/16_cloud_migration_3tier_app" target="_blank" class="proj-link">→ GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-category">🛠️ SysAdmin Automation</div>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-emoji">🛠️</div>
+      <div class="project-title">OS Setup & Optimization Toolkit</div>
+      <div class="project-desc">Interactive CLI toolkit for IT post-install setup. Windows (PowerShell) and Linux (Bash) versions with system diagnostics, temp cleanup, firewall audit, DNS checks, and software inventory. Generates a timestamped report file.</div>
+      <div class="tag-row"><span class="tag">PowerShell</span><span class="tag">Bash</span><span class="tag">Windows</span><span class="tag">Linux</span></div>
+      <div class="project-links">
+        <a href="https://github.com/TamNguyenmeomeo/13_os_setup_optimization_toolkit" target="_blank" class="proj-link">→ GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section id="journey">
+  <div class="section-title">🗺️ Career Journey</div>
+  <p class="section-sub">Mapping IT Support skills to Cloud Engineering competencies</p>
+  <div class="journey-grid">
+    <div class="journey-card">
+      <h3>IT Support (Before)</h3>
+      <div class="journey-item"><span class="check">✅</span> Ticket management & triage</div>
+      <div class="journey-item"><span class="check">✅</span> Network diagnostics</div>
+      <div class="journey-item"><span class="check">✅</span> Log analysis & troubleshooting</div>
+      <div class="journey-item"><span class="check">✅</span> OS administration (Win/Linux)</div>
+      <div class="journey-item"><span class="check">✅</span> Hardware & software support</div>
+    </div>
+    <div class="journey-card">
+      <h3>Cloud Support (Now)</h3>
+      <div class="journey-item"><span class="arrow">→</span><span class="journey-right">AI-Assisted Helpdesk (RAG + LLM)</span></div>
+      <div class="journey-item"><span class="arrow">→</span><span class="journey-right">Real-time Monitoring (Prometheus/Grafana)</span></div>
+      <div class="journey-item"><span class="arrow">→</span><span class="journey-right">ML Anomaly Detection (Isolation Forest)</span></div>
+      <div class="journey-item"><span class="arrow">→</span><span class="journey-right">Automated Setup Toolkit (Cross-platform)</span></div>
+      <div class="journey-item"><span class="arrow">→</span><span class="journey-right">3-Tier Cloud Migration (Docker + Nginx)</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-card">
+    <h2>Let's Connect 👋</h2>
+    <p>Open to Cloud Support, Cloud Operations, and DevOps roles.<br>Feel free to reach out or explore my GitHub.</p>
+    <div class="contact-links">
+      <a href="https://github.com/TamNguyenmeomeo" target="_blank" class="contact-btn cb-gh">
+        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a href="mailto:thanhtamtnk123@gmail.com" class="contact-btn cb-mail">
+        ✉️ Send Email
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Built with ❤️ by Nguyen Thanh Tam · IT Support → Cloud Engineer</p>
+</footer>
+
+<script>
+// Smooth reveal on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; }
+  });
+}, {threshold:0.1});
+
+document.querySelectorAll('.project-card,.journey-card,.skill-chip').forEach(el => {
+  el.style.opacity='0';
+  el.style.transform='translateY(20px)';
+  el.style.transition='opacity 0.5s ease, transform 0.5s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
