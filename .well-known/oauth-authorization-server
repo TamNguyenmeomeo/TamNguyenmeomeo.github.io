@@ -12,15 +12,10 @@
   ],
   "agent_auth": {
     "skill": "https://tamnguyen-portfolio.vercel.app/auth.md",
-    "identity_endpoint": "https://tamnguyen-portfolio.vercel.app/agent/identity",
-    "claim_endpoint": "https://tamnguyen-portfolio.vercel.app/agent/identity/claim",
-    "events_endpoint": "https://tamnguyen-portfolio.vercel.app/agent/event/notify",
+    "register_uri": "https://tamnguyen-portfolio.vercel.app/agent/identity",
+    "claim_uri": "https://tamnguyen-portfolio.vercel.app/agent/identity/claim",
+    "revocation_uri": "https://tamnguyen-portfolio.vercel.app/agent/event/notify",
     "identity_types_supported": ["anonymous"],
-    "identity_assertion": {
-      "assertion_types_supported": [
-        "urn:ietf:params:oauth:token-type:id-jag"
-      ]
-    },
-    "events_supported": []
+    "credential_types_supported": ["access_token"]
   }
 }
