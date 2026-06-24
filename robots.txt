@@ -1,0 +1,10 @@
+# As a condition of accessing this website, you agree to these content signals:
+# ai-train: Training or fine-tuning AI models.
+# search: Building a search index and providing search results.
+# ai-input: Use content as live input for AI answers (RAG/grounding).
+
+User-agent: *
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+Allow: /
+
+Sitemap: https://TamNguyenmeomeo.github.io/sitemap.xml
