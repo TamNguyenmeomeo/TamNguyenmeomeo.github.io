@@ -367,6 +367,30 @@ document.querySelectorAll('.project-card,.journey-card,.skill-chip').forEach(el 
   el.style.transition='opacity 0.5s ease, transform 0.5s ease';
   observer.observe(el);
 });
+
+// WebMCP tool registration for agent readiness
+if (navigator.modelContext && typeof navigator.modelContext.provideContext === 'function') {
+  navigator.modelContext.provideContext({
+    tools: [
+      {
+        name: "get_portfolio_info",
+        description: "Get summary information about Tam Nguyen's profile, contact details, education and project highlights.",
+        inputSchema: {
+          type: "object",
+          properties: {}
+        },
+        execute: async () => {
+          return {
+            name: "Nguyen Thanh Tam",
+            role: "Cloud Support / IT Support Engineer",
+            thesis: "Bird Audio Classification using EfficientNet-B7 + LSTM",
+            email: "tamnguyen.telecom@gmail.com"
+          };
+        }
+      }
+    ]
+  });
+}
 </script>
 </body>
 </html>

@@ -1,3 +1,12 @@
 {
-  "skills": []
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "tamnguyen-skills",
+      "type": "skill-md",
+      "description": "Provides information about Tam Nguyen's profile, education, thesis, and core DevOps/IT Support projects.",
+      "url": "https://tamnguyen-portfolio.vercel.app/.well-known/agent-skills/tamnguyen-skills.md",
+      "digest": "sha256:f313289f95ed5c1228c4c85fd7273cd5973dca31277c951f82db90b9f5ea856f"
+    }
+  ]
 }
