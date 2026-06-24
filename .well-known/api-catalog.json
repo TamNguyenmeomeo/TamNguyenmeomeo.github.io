@@ -1,4 +1,12 @@
 {
-  "version": "1.0.0",
-  "services": []
+  "linkset": [
+    {
+      "anchor": "https://tamnguyen-portfolio.vercel.app/",
+      "service-desc": [
+        {
+          "href": "https://tamnguyen-portfolio.vercel.app/index.md"
+        }
+      ]
+    }
+  ]
 }

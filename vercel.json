@@ -5,7 +5,7 @@
       "headers": [
         {
           "key": "Link",
-          "value": "</.well-known/api-catalog.json>; rel=\"api-catalog\", </auth.md>; rel=\"service-doc\", </.well-known/mcp/server-card.json>; rel=\"mcp\", </.well-known/agent-skills/index.json>; rel=\"agent-skills\""
+          "value": "</.well-known/api-catalog>; rel=\"api-catalog\", </auth.md>; rel=\"service-doc\", </.well-known/mcp/server-card.json>; rel=\"mcp\", </.well-known/agent-skills/index.json>; rel=\"agent-skills\", </.well-known/oauth-protected-resource>; rel=\"http://openequivalent.org/rel/oauth-protected-resource\""
         }
       ]
     }
@@ -17,7 +17,7 @@
         {
           "type": "header",
           "key": "Accept",
-          "value": ".*text/markdown.*"
+          "value": "(.*text/markdown.*)"
         }
       ],
       "destination": "/index.md"

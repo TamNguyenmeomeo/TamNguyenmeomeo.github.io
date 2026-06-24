@@ -1,0 +1,26 @@
+{
+  "resource": "https://tamnguyen-portfolio.vercel.app/",
+  "authorization_servers": ["https://tamnguyen-portfolio.vercel.app/"],
+  "scopes_supported": ["read"],
+  "bearer_methods_supported": ["header"],
+  "issuer": "https://tamnguyen-portfolio.vercel.app",
+  "token_endpoint": "https://tamnguyen-portfolio.vercel.app/oauth2/token",
+  "revocation_endpoint": "https://tamnguyen-portfolio.vercel.app/oauth2/revoke",
+  "grant_types_supported": [
+    "urn:ietf:params:oauth:grant-type:jwt-bearer",
+    "urn:workos:agent-auth:grant-type:claim"
+  ],
+  "agent_auth": {
+    "skill": "https://tamnguyen-portfolio.vercel.app/auth.md",
+    "identity_endpoint": "https://tamnguyen-portfolio.vercel.app/agent/identity",
+    "claim_endpoint": "https://tamnguyen-portfolio.vercel.app/agent/identity/claim",
+    "events_endpoint": "https://tamnguyen-portfolio.vercel.app/agent/event/notify",
+    "identity_types_supported": ["anonymous"],
+    "identity_assertion": {
+      "assertion_types_supported": [
+        "urn:ietf:params:oauth:token-type:id-jag"
+      ]
+    },
+    "events_supported": []
+  }
+}
