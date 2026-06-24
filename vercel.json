@@ -1,0 +1,26 @@
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</.well-known/api-catalog.json>; rel=\"api-catalog\", </auth.md>; rel=\"service-doc\", </.well-known/mcp/server-card.json>; rel=\"mcp\", </.well-known/agent-skills/index.json>; rel=\"agent-skills\""
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "header",
+          "key": "Accept",
+          "value": ".*text/markdown.*"
+        }
+      ],
+      "destination": "/index.md"
+    }
+  ]
+}
