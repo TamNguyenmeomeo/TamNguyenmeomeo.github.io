@@ -1,4 +1,4 @@
-# Nguyen Thanh Tam — Cloud Support Portfolio
+# Nguyễn Thanh Tâm Portfolio
 
 Transitioning from IT Helpdesk to Cloud Engineering — building production-ready projects with Docker, Python, Prometheus, and AI-powered tooling.
 
