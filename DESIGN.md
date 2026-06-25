@@ -18,7 +18,7 @@
 
 ### Typography
 - **Display Font (Headings)**: `Outfit` (sans-serif, geometric, modern tech feel)
-- **Text Font (Body)**: `Plus Jakarta Sans` (sans-serif, highly legible at small sizes)
+- **Text Font (Body)**: `Be Vietnam Pro` (sans-serif, optimized specifically for Vietnamese readability and diacritics)
 - **Hierarchy**:
   - `h1`: `clamp(2.5rem, 6vw, 4.5rem)`, bold, solid white.
   - `h2`: `2rem`, bold.
