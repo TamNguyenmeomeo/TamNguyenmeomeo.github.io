@@ -17,8 +17,8 @@
   - Hover Border: `rgba(59, 130, 246, 0.3)`
 
 ### Typography
-- **Display Font (Headings)**: `Outfit` (sans-serif, geometric, modern tech feel)
-- **Text Font (Body)**: `Be Vietnam Pro` (sans-serif, optimized specifically for Vietnamese readability and diacritics)
+- **Display Font (Headings)**: `Be Vietnam Pro` (sans-serif, bold/extra-bold weights, perfect Vietnamese diacritics support)
+- **Text Font (Body)**: `Manrope` (sans-serif, highly legible, clean and modern body typeface with great Vietnamese support)
 - **Hierarchy**:
   - `h1`: `clamp(2.5rem, 6vw, 4.5rem)`, bold, solid white.
   - `h2`: `2rem`, bold.
