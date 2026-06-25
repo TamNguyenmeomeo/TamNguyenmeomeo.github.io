@@ -11,38 +11,45 @@
 <link rel="mcp" type="application/json" href="/.well-known/mcp/server-card.json">
 <link rel="agent-skills" type="application/json" href="/.well-known/agent-skills/index.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#060818;
-  --glass:rgba(255,255,255,0.05);
-  --glass-border:rgba(255,255,255,0.1);
-  --blue:#4facfe;--purple:#a78bfa;--green:#51cf66;--pink:#f472b6;--orange:#fb923c;
-  --text:rgba(255,255,255,0.9);--muted:rgba(255,255,255,0.5);
+  --bg:#060815;
+  --glass:rgba(255,255,255,0.03);
+  --glass-border:rgba(255,255,255,0.07);
+  --blue:#3b82f6;
+  --purple:#8b5cf6;
+  --green:#10b981;
+  --pink:#ec4899;
+  --orange:#f97316;
+  --text:rgba(255,255,255,0.95);
+  --muted:rgba(255,255,255,0.55);
 }
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+h1,h2,h3,h4,h5,h6{font-family:'Outfit',sans-serif}
 
 /* ── Animated background ── */
 body::before{
   content:'';position:fixed;inset:0;z-index:-1;
   background:
-    radial-gradient(ellipse 80% 60% at 10% 10%,rgba(79,172,254,0.12) 0%,transparent 60%),
-    radial-gradient(ellipse 60% 50% at 90% 80%,rgba(167,139,250,0.12) 0%,transparent 60%),
-    radial-gradient(ellipse 40% 40% at 50% 50%,rgba(15,12,41,1) 0%,#060818 100%);
+    radial-gradient(ellipse 80% 60% at 10% 10%,rgba(59,130,246,0.1) 0%,transparent 60%),
+    radial-gradient(ellipse 60% 50% at 90% 80%,rgba(139,92,246,0.1) 0%,transparent 60%),
+    radial-gradient(ellipse 40% 40% at 50% 50%,rgba(15,12,41,1) 0%,#060815 100%);
 }
 
 /* ── Nav ── */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
   padding:16px 40px;display:flex;justify-content:space-between;align-items:center;
-  background:rgba(6,8,24,0.8);backdrop-filter:blur(20px);
+  background:rgba(6,8,21,0.85);backdrop-filter:blur(20px);
   border-bottom:1px solid var(--glass-border);
 }
-.nav-logo{font-weight:700;font-size:1.1rem;background:linear-gradient(90deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-logo{font-weight:700;font-size:1.1rem;color:#ffffff;letter-spacing:0.5px}
 .nav-links{display:flex;gap:32px;list-style:none}
-.nav-links a{color:var(--muted);text-decoration:none;font-size:14px;transition:color .2s}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
 .nav-links a:hover{color:var(--text)}
 
 /* ── Sections ── */
@@ -55,15 +62,14 @@ section{padding:100px 40px;max-width:1100px;margin:0 auto}
 }
 .hero-badge{
   display:inline-flex;align-items:center;gap:8px;
-  background:rgba(79,172,254,0.1);border:1px solid rgba(79,172,254,0.3);
+  background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.25);
   border-radius:40px;padding:6px 18px;font-size:13px;color:var(--blue);
-  margin-bottom:28px;width:fit-content;
+  font-weight:600;margin-bottom:28px;width:fit-content;
 }
 .hero-badge span{width:8px;height:8px;background:var(--blue);border-radius:50%;animation:pulse 2s infinite}
 h1.hero-title{
-  font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;line-height:1.1;margin-bottom:20px;
+  font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;line-height:1.1;margin-bottom:20px;color:#ffffff;
 }
-.gradient-text{background:linear-gradient(135deg,var(--blue),var(--purple),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .hero-subtitle{font-size:1.2rem;color:var(--muted);max-width:600px;line-height:1.7;margin-bottom:40px}
 .hero-btns{display:flex;gap:16px;flex-wrap:wrap}
 .btn-primary{
@@ -71,7 +77,7 @@ h1.hero-title{
   border:none;border-radius:12px;color:white;font-weight:600;font-size:15px;
   cursor:pointer;text-decoration:none;transition:transform .2s,box-shadow .2s;
 }
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(79,172,254,0.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(59,130,246,0.3)}
 .btn-outline{
   padding:14px 32px;background:transparent;
   border:1px solid var(--glass-border);border-radius:12px;color:var(--text);
@@ -94,23 +100,23 @@ h1.hero-title{
 }
 .skill-chip:hover{border-color:var(--blue);transform:translateY(-2px)}
 
-/* ── Projects ── */
-.section-title{font-size:2rem;font-weight:700;margin-bottom:8px}
+/* ── Projects & Common Titles ── */
+h2.section-title{font-size:2.2rem;font-weight:800;margin-bottom:8px;color:#ffffff;letter-spacing:-0.5px}
 .section-sub{color:var(--muted);margin-bottom:40px;font-size:1rem}
-.project-category{font-size:13px;color:var(--purple);font-weight:600;text-transform:uppercase;letter-spacing:1.5px;margin:40px 0 16px}
+.project-category{font-size:13px;color:var(--purple);font-weight:700;letter-spacing:0.5px;margin:40px 0 16px;border-bottom:1px solid var(--glass-border);padding-bottom:8px}
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
 .project-card{
   background:var(--glass);border:1px solid var(--glass-border);
   border-radius:20px;padding:28px;transition:transform .25s,border-color .25s,box-shadow .25s;
   display:flex;flex-direction:column;gap:12px;
 }
-.project-card:hover{transform:translateY(-5px);border-color:rgba(79,172,254,0.3);box-shadow:0 20px 60px rgba(0,0,0,0.4)}
+.project-card:hover{transform:translateY(-5px);border-color:rgba(59,130,246,0.3);box-shadow:0 20px 60px rgba(0,0,0,0.4)}
 .project-emoji{font-size:2rem}
-.project-title{font-weight:700;font-size:1.05rem}
+.project-title{font-weight:700;font-size:1.15rem;color:#ffffff}
 .project-desc{color:var(--muted);font-size:14px;line-height:1.6;flex:1}
 .tag-row{display:flex;flex-wrap:wrap;gap:8px}
 .tag{
-  background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);
+  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);
   border-radius:20px;padding:3px 12px;font-size:12px;color:var(--muted);
 }
 .project-links{display:flex;gap:12px;margin-top:4px}
@@ -122,10 +128,178 @@ h1.hero-title{
 .ci-badge{display:inline-block;max-width:100%}
 .ci-badge img{max-width:100%;height:auto;max-height:20px;border-radius:4px;display:block}
 
+/* ── System Design Section ── */
+#system-design {
+  padding: 100px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.sys-design-container {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 20px;
+  min-height: 500px;
+  overflow: hidden;
+  padding: 8px;
+}
+.sys-design-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  border-right: 1px solid var(--glass-border);
+}
+.sys-menu-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  color: var(--muted);
+  padding: 14px 18px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.sys-menu-btn:hover {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  border-color: var(--glass-border);
+}
+.sys-menu-btn.active {
+  background: rgba(59, 130, 246, 0.08);
+  border-color: rgba(59, 130, 246, 0.2);
+  color: var(--blue);
+}
+.sys-menu-num {
+  font-size: 11px;
+  color: var(--purple);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.sys-design-detail {
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+}
+.sys-detail-content {
+  display: none;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  flex-direction: column;
+  gap: 24px;
+}
+.sys-detail-content.active {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+.sys-detail-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+}
+.sys-detail-intro {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+.sys-spec-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 20px;
+}
+.sys-spec-box {
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 20px;
+}
+.sys-spec-box h4 {
+  font-size: 13px;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+.sys-spec-box ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.sys-spec-box ul li {
+  font-size: 13.5px;
+  color: var(--text);
+  position: relative;
+  padding-left: 16px;
+  line-height: 1.5;
+}
+.sys-spec-box ul li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: var(--blue);
+  font-size: 10px;
+}
+.sys-spec-box p {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.sys-mapping-project {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-top: 1px solid var(--glass-border);
+  padding-top: 24px;
+  margin-top: 8px;
+}
+.mapping-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--orange);
+  font-weight: 700;
+}
+.mapping-project-info {
+  display: flex;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid var(--glass-border);
+  padding: 20px;
+  border-radius: 16px;
+  align-items: flex-start;
+}
+.project-icon {
+  font-size: 24px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 8px;
+  border-radius: 12px;
+  line-height: 1;
+}
+.mapping-project-info strong {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 6px;
+  color: #fff;
+}
+.mapping-project-info p {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
 /* ── Journey ── */
 .journey-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px}
 .journey-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:20px;padding:28px}
-.journey-card h3{margin-bottom:16px;font-size:1rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.journey-card h3{margin-bottom:16px;font-size:1.1rem;color:var(--text);letter-spacing:0.5px;font-weight:700}
 .journey-item{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:14px}
 .journey-item:last-child{border-bottom:none}
 .check{color:var(--green)}
@@ -137,7 +311,7 @@ h1.hero-title{
   background:var(--glass);border:1px solid var(--glass-border);
   border-radius:24px;padding:48px;text-align:center;
 }
-.contact-card h2{font-size:2rem;font-weight:700;margin-bottom:12px}
+.contact-card h2{font-size:2rem;font-weight:800;color:#ffffff;margin-bottom:12px}
 .contact-card p{color:var(--muted);margin-bottom:32px;font-size:1rem}
 .contact-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
 .contact-btn{
@@ -147,12 +321,33 @@ h1.hero-title{
 .cb-gh{background:rgba(255,255,255,0.08);border:1px solid var(--glass-border);color:var(--text)}
 .cb-gh:hover{border-color:var(--blue);color:var(--blue)}
 .cb-mail{background:linear-gradient(135deg,var(--blue),var(--purple));color:white;border:none}
-.cb-mail:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(79,172,254,0.35)}
+.cb-mail:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(59,130,246,0.3)}
 
 /* ── Footer ── */
 footer{text-align:center;padding:32px;color:var(--muted);font-size:13px;border-top:1px solid var(--glass-border)}
 
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+@media(max-width:800px){
+  .sys-design-container {
+    grid-template-columns: 1fr;
+  }
+  .sys-design-menu {
+    flex-direction: row;
+    overflow-x: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 16px;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sys-menu-btn {
+    padding: 10px 16px;
+    flex-shrink: 0;
+  }
+  .sys-spec-grid {
+    grid-template-columns: 1fr;
+  }
+}
 @media(max-width:700px){
   nav{padding:14px 20px}.nav-links{gap:16px}
   section{padding:80px 20px}
@@ -169,6 +364,7 @@ footer{text-align:center;padding:32px;color:var(--muted);font-size:13px;border-t
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#system-design">System Design</a></li>
     <li><a href="#journey">Journey</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -178,7 +374,7 @@ footer{text-align:center;padding:32px;color:var(--muted);font-size:13px;border-t
 <section id="hero">
   <div class="hero-badge"><span></span> Open to Cloud Support Roles</div>
   <h1 class="hero-title">
-    <span class="gradient-text">Nguyễn Thanh Tâm</span><br>
+    Nguyễn Thanh Tâm<br>
     Portfolio
   </h1>
   <p class="hero-subtitle">
@@ -193,7 +389,7 @@ footer{text-align:center;padding:32px;color:var(--muted);font-size:13px;border-t
 
 <!-- ABOUT / SKILLS -->
 <section id="about">
-  <div class="section-title">🛠️ Tech Stack</div>
+  <h2 class="section-title">🛠️ Tech Stack</h2>
   <p class="section-sub">Tools and technologies I use to build cloud-ready systems</p>
   <div class="skills-grid">
     <div class="skill-chip">🐍 Python</div>
@@ -217,7 +413,7 @@ footer{text-align:center;padding:32px;color:var(--muted);font-size:13px;border-t
 
 <!-- PROJECTS -->
 <section id="projects">
-  <div class="section-title">📁 Portfolio Projects</div>
+  <h2 class="section-title">📁 Portfolio Projects</h2>
   <p class="section-sub">7 projects spanning AI, monitoring, cloud infrastructure and DevOps automation</p>
 
   <div class="project-category">🤖 AI & Machine Learning for IT Operations</div>
@@ -262,7 +458,7 @@ footer{text-align:center;padding:32px;color:var(--muted);font-size:13px;border-t
     <div class="project-card">
       <div class="project-emoji">📊</div>
       <div class="project-title">Cloud Monitoring Stack</div>
-      <div class="project-desc">Enterprise-grade monitoring: Prometheus scrapes metrics, Grafana visualizes dashboards, cAdvisor tracks container resources, Alertmanager fires Telegram alerts on threshold breach.</div>
+      <div class="project-desc">Production monitoring pipeline: Prometheus scrapes metrics, Grafana visualizes dashboards, cAdvisor tracks container resources, Alertmanager fires Telegram alerts on threshold breach.</div>
       <div class="tag-row"><span class="tag">Docker</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Alertmanager</span></div>
       <div class="ci-badge"><img src="https://github.com/TamNguyenmeomeo/15_cloud_monitoring_stack/actions/workflows/ci.yml/badge.svg" alt="CI"></div>
       <div class="project-links">
@@ -304,6 +500,205 @@ footer{text-align:center;padding:32px;color:var(--muted);font-size:13px;border-t
       <div class="tag-row"><span class="tag">PowerShell</span><span class="tag">Bash</span><span class="tag">Windows</span><span class="tag">Linux</span></div>
       <div class="project-links">
         <a href="https://github.com/TamNguyenmeomeo/13_os_setup_optimization_toolkit" target="_blank" class="proj-link">→ GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SYSTEM DESIGN & ARCHITECTURE -->
+<section id="system-design">
+  <h2 class="section-title">🌐 System Design & Architecture</h2>
+  <p class="section-sub">Mapping system design principles from Alex Xu's studies directly to my practical projects</p>
+  
+  <div class="sys-design-container glass">
+    <!-- Left Menu -->
+    <div class="sys-design-menu">
+      <button class="sys-menu-btn active" data-topic="scaling">
+        <span class="sys-menu-num">Ch. 01</span> Scale 0 to Millions
+      </button>
+      <button class="sys-menu-btn" data-topic="notification">
+        <span class="sys-menu-num">Ch. 10</span> Notification System
+      </button>
+      <button class="sys-menu-btn" data-topic="monitoring">
+        <span class="sys-menu-num">Ch. 20</span> Metrics & Alerting
+      </button>
+      <button class="sys-menu-btn" data-topic="storage">
+        <span class="sys-menu-num">Ch. 24</span> S3-like Object Storage
+      </button>
+      <button class="sys-menu-btn" data-topic="chat">
+        <span class="sys-menu-num">Ch. 12</span> Chat System
+      </button>
+    </div>
+    
+    <!-- Right Detail Panel -->
+    <div class="sys-design-detail">
+      <div class="sys-detail-content active" id="detail-scaling">
+        <h3 class="sys-detail-title">Scale from Zero to Millions of Users</h3>
+        <p class="sys-detail-intro">Understanding how systems evolve from a single server to a highly available, distributed tier-based architecture.</p>
+        
+        <div class="sys-spec-grid">
+          <div class="sys-spec-box">
+            <h4>Core Architecture Concepts</h4>
+            <ul>
+              <li>DNS Routing & CDN caching for static content</li>
+              <li>Load Balancers (Nginx/HAProxy) for horizontal scaling</li>
+              <li>Database replication (Master/Replica) and read/write splitting</li>
+              <li>Stateless web tier using external session storage (Redis)</li>
+            </ul>
+          </div>
+          <div class="sys-spec-box">
+            <h4>Trade-offs & Challenges</h4>
+            <p>Moving from vertical to horizontal scaling requires handling state-sharing, data consistency across replicas, and ensuring load balancer health checks are robust to avoid single points of failure (SPOF).</p>
+          </div>
+        </div>
+        
+        <div class="sys-mapping-project">
+          <span class="mapping-label">Implemented in my project:</span>
+          <div class="mapping-project-info">
+            <span class="project-icon">🚀</span>
+            <div>
+              <strong>3-Tier Cloud Migration App</strong>
+              <p>Implemented horizontal stateless containers behind an Nginx load balancer reverse proxy, using PostgreSQL replication practices. Managed configurations via Docker Compose for easy deployment scaling.</p>
+              <a href="https://github.com/TamNguyenmeomeo/16_cloud_migration_3tier_app" target="_blank" class="proj-link">View Repository →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Notification System -->
+      <div class="sys-detail-content" id="detail-notification">
+        <h3 class="sys-detail-title">Design a Notification System</h3>
+        <p class="sys-detail-intro">Building scalable and reliable messaging pipelines across notification channels (SMS, Email, Push, Webhooks, Telegram).</p>
+        
+        <div class="sys-spec-grid">
+          <div class="sys-spec-box">
+            <h4>Core Architecture Concepts</h4>
+            <ul>
+              <li>Asynchronous message queues (RabbitMQ/Kafka) to decouple notification triggers from delivery</li>
+              <li>Rate limiting to prevent alert fatigue and network throttling</li>
+              <li>Retry mechanisms with exponential backoff for failed sends</li>
+              <li>Template engines for message personalization and separation of concerns</li>
+            </ul>
+          </div>
+          <div class="sys-spec-box">
+            <h4>Trade-offs & Challenges</h4>
+            <p>Guaranteeing "at-least-once" delivery versus preventing duplicate messages. Setting proper rate limits at the user level to protect channel reputation and enhance UX.</p>
+          </div>
+        </div>
+        
+        <div class="sys-mapping-project">
+          <span class="mapping-label">Implemented in my project:</span>
+          <div class="mapping-project-info">
+            <span class="project-icon">📡</span>
+            <div>
+              <strong>Network & System Monitor</strong>
+              <p>Built a custom notification gateway with Telegram bot integration, incorporating threshold-based rate limiting to prevent spamming notifications when a metric oscillates around limit thresholds.</p>
+              <a href="https://github.com/TamNguyenmeomeo/11_network_system_monitor" target="_blank" class="proj-link">View Repository →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Metrics Monitoring -->
+      <div class="sys-detail-content" id="detail-monitoring">
+        <h3 class="sys-detail-title">Metrics Monitoring & Alerting System</h3>
+        <p class="sys-detail-intro">Designing infrastructure to collect, store, and query high-volume time-series data for system health tracking.</p>
+        
+        <div class="sys-spec-grid">
+          <div class="sys-spec-box">
+            <h4>Core Architecture Concepts</h4>
+            <ul>
+              <li><strong>Pull vs. Push collection:</strong> Pull (Prometheus scrapes endpoints) reduces server-side collection logic complexity</li>
+              <li>Time-Series Database (TSDB) storage optimization for write-heavy metric logging</li>
+              <li>Metrics aggregation, downsampling, and custom query languages (PromQL)</li>
+              <li>Alert routing, deduplication, and integration with incident response (PagerDuty, Slack)</li>
+            </ul>
+          </div>
+          <div class="sys-spec-box">
+            <h4>Trade-offs & Challenges</h4>
+            <p>Pull model requires service discovery but protects the server from push surges. TSDB requires efficient compression algorithms (like Gorilla) to handle billions of telemetry points daily.</p>
+          </div>
+        </div>
+        
+        <div class="sys-mapping-project">
+          <span class="mapping-label">Implemented in my project:</span>
+          <div class="mapping-project-info">
+            <span class="project-icon">📊</span>
+            <div>
+              <strong>Cloud Monitoring Stack</strong>
+              <p>Deployed a full observability stack using Docker Compose, integrating Prometheus pull-based scraping, Grafana dash representation, and Alertmanager routing alert webhooks to Telegram channels.</p>
+              <a href="https://github.com/TamNguyenmeomeo/15_cloud_monitoring_stack" target="_blank" class="proj-link">View Repository →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- S3-like Storage -->
+      <div class="sys-detail-content" id="detail-storage">
+        <h3 class="sys-detail-title">Design S3-like Object Storage</h3>
+        <p class="sys-detail-intro">Creating a scalable, highly durable, and cost-effective distributed file storage system for unstructured data.</p>
+        
+        <div class="sys-spec-grid">
+          <div class="sys-spec-box">
+            <h4>Core Architecture Concepts</h4>
+            <ul>
+              <li>Separation of Metadata (SQLite/PostgreSQL) and Blobs (Data node storage)</li>
+              <li>REST API interface (GET, PUT, DELETE bucket/object operations)</li>
+              <li>IAM Policy engine checking bucket/object access permissions</li>
+              <li>Data durability via replication or erasure coding across failure domains</li>
+            </ul>
+          </div>
+          <div class="sys-spec-box">
+            <h4>Trade-offs & Challenges</h4>
+            <p>Strong consistency for metadata vs eventual consistency for object replication. Handling large files via multipart uploads to avoid memory overflow on API nodes.</p>
+          </div>
+        </div>
+        
+        <div class="sys-mapping-project">
+          <span class="mapping-label">Implemented in my project:</span>
+          <div class="mapping-project-info">
+            <span class="project-icon">🔐</span>
+            <div>
+              <strong>Cloud Storage & IAM Simulator</strong>
+              <p>Simulated AWS S3 IAM structure locally using MinIO object storage. Wrote Python script validation using boto3 API to test access permissions for Admin, Developer, and ReadOnly roles.</p>
+              <a href="https://github.com/TamNguyenmeomeo/14_cloud_storage_iam_simulator" target="_blank" class="proj-link">View Repository →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Chat System -->
+      <div class="sys-detail-content" id="detail-chat">
+        <h3 class="sys-detail-title">Design a Chat System</h3>
+        <p class="sys-detail-intro">Supporting real-time, low-latency communication with message persistence and presence tracking.</p>
+        
+        <div class="sys-spec-grid">
+          <div class="sys-spec-box">
+            <h4>Core Architecture Concepts</h4>
+            <ul>
+              <li>WebSockets for bi-directional, persistent real-time communication</li>
+              <li>Stateful connection managers to handle active user socket connections</li>
+              <li>Message synchronization across devices using sequence numbers</li>
+              <li>Read receipts and active presence heartbeat mechanisms</li>
+            </ul>
+          </div>
+          <div class="sys-spec-box">
+            <h4>Trade-offs & Challenges</h4>
+            <p>WebSockets are stateful, requiring sticky sessions or pub/sub message brokers (like Redis) to route messages to users connected to different chat servers. Scaling for group chats requires different fan-out patterns.</p>
+          </div>
+        </div>
+        
+        <div class="sys-mapping-project">
+          <span class="mapping-label">Implemented in my project:</span>
+          <div class="mapping-project-info">
+            <span class="project-icon">🧠</span>
+            <div>
+              <strong>AI IT Support Assistant</strong>
+              <p>Integrated Telegram API for real-time ticket query submission and AI response retrieval. Managed session persistence locally in SQLite database and used RAG vector querying to resolve user prompts dynamically.</p>
+              <a href="https://github.com/TamNguyenmeomeo/10_ai_it_support_assistant" target="_blank" class="proj-link">View Repository →</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -362,11 +757,33 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, {threshold:0.1});
 
-document.querySelectorAll('.project-card,.journey-card,.skill-chip').forEach(el => {
+document.querySelectorAll('.project-card,.journey-card,.skill-chip,.sys-design-container').forEach(el => {
   el.style.opacity='0';
   el.style.transform='translateY(20px)';
   el.style.transition='opacity 0.5s ease, transform 0.5s ease';
   observer.observe(el);
+});
+
+// System Design Section Interactive Menu
+document.querySelectorAll('.sys-menu-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    // Remove active class from buttons
+    document.querySelectorAll('.sys-menu-btn').forEach(b => b.classList.remove('active'));
+    // Add active class to clicked button
+    btn.classList.add('active');
+    
+    // Hide all details
+    document.querySelectorAll('.sys-detail-content').forEach(d => {
+      d.classList.remove('active');
+    });
+    
+    // Show selected detail
+    const topic = btn.getAttribute('data-topic');
+    const target = document.getElementById(`detail-${topic}`);
+    if (target) {
+      target.classList.add('active');
+    }
+  });
 });
 
 // WebMCP tool registration for agent readiness
