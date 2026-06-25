@@ -15,10 +15,10 @@ GET /.well-known/oauth-protected-resource
 Response:
 ```json
 {
-  "resource": "https://tamnguyen-portfolio.vercel.app/",
+  "resource": "https://tamnguyen-portfolio.vercel.app",
   "resource_name": "Tam Nguyen Portfolio",
   "resource_logo_uri": "",
-  "authorization_servers": ["https://tamnguyen-portfolio.vercel.app/"],
+  "authorization_servers": ["https://tamnguyen-portfolio.vercel.app"],
   "scopes_supported": ["read"],
   "bearer_methods_supported": ["header"]
 }

@@ -1,6 +1,6 @@
 {
-  "resource": "https://tamnguyen-portfolio.vercel.app/",
-  "authorization_servers": ["https://tamnguyen-portfolio.vercel.app/"],
+  "resource": "https://tamnguyen-portfolio.vercel.app",
+  "authorization_servers": ["https://tamnguyen-portfolio.vercel.app"],
   "scopes_supported": ["read"],
   "bearer_methods_supported": ["header"],
   "issuer": "https://tamnguyen-portfolio.vercel.app",
