@@ -16,6 +16,8 @@
     "claim_uri": "https://tamnguyen-portfolio.vercel.app/agent/identity/claim",
     "revocation_uri": "https://tamnguyen-portfolio.vercel.app/agent/event/notify",
     "identity_types_supported": ["anonymous"],
-    "credential_types_supported": ["access_token"]
+    "anonymous": {
+      "credential_types_supported": ["access_token"]
+    }
   }
 }
